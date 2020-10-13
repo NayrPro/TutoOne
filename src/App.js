@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react'
+import './App.css'
+import Footer from './Footer.js';
+import Main from "./Main.js"
+import Class1 from "./Class1"
+import PokeApi from './PokeAPI';
+import UseState1 from './UseState1'
+import FormulaireV6 from './Components/FormulaireV6'
+import { theme, ThemeProvider } from "@chakra-ui/core";
+import ChakraInput from './Components/ChakraInput'
 function App() {
+
+  const contenu = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde id corrupti, aliquid molestiae dolores debitis quae impedit maxime repellat quos incidunt error tempore delectus nihil soluta nam voluptatem in rerum";
+  const features = { 
+    color: "grey", 
+    backgroundColor: "#9de0af"}
   return (
+    <ThemeProvider theme={theme}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {/* <UseState1/> */}
+        <FormulaireV6/>
+        <PokeApi/>
+        <Class1 name="OA"/>
+        <Main></Main>
+        <Footer content={contenu}
+                features={features}>
+        </Footer>
     </div>
+    </ThemeProvider>
+    
   );
 }
 
